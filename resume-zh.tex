@@ -8,55 +8,70 @@
 \usepackage{linespacing_fix} % disable extra space before next section
 \usepackage{cite}
 
+% Simpler bibsection for CV sections
+% (thanks to natbib for inspiration)
+\makeatletter
+\newlength{\bibhang}
+\setlength{\bibhang}{1em} %1em}
+\newlength{\bibsep}
+ {\@listi \global\bibsep\itemsep \global\advance\bibsep by\parsep}
+\newenvironment{bibsection}%
+        {\begin{enumerate}{}{%
+%        {\begin{list}{}{%
+       \setlength{\leftmargin}{\bibhang}%
+       \setlength{\itemindent}{-\leftmargin}%
+       \setlength{\itemsep}{\bibsep}%
+       \setlength{\parsep}{\z@}%
+        \setlength{\partopsep}{0pt}%
+        \setlength{\topsep}{0pt}}}
+        {\end{enumerate}\vspace{-.6\baselineskip}}
+
 \begin{document}
 \pagenumbering{gobble} % suppress displaying page number
 
-\name{你的大名}
+\name{陈超锋 | 个人简历}
 
 % {E-mail}{mobilephone}{homepage}
 % be careful of _ in emaill address
-\contactInfo{my\_address@yuanbin.me}{(+86) 131-221-87xxx}{http://www.yuanbin.me}
+\contactInfo{cfchen@cs.hku.hk}{(+852) 92077137}{http://www.cfchen.com}
 % {E-mail}{mobilephone}
 % keep the last empty braces!
 %\contactInfo{xxx@yuanbin.me}{(+86) 131-221-87xxx}{}
  
 \section{\faGraduationCap\  教育背景}
-\datedsubsection{\textbf{上海交通大学}, 上海}{2013 -- 至今}
-\textit{在读硕士研究生}\ 信息与通信工程, 预计 2016 年 3 月毕业
-\datedsubsection{\textbf{西安电子科技大学}, 西安, 陕西}{2009 -- 2013}
-\textit{学士}\ 通信工程
-
-\section{\faUsers\ 实习/项目经历}
-\datedsubsection{\textbf{黑科技公司} 上海}{2015年3月 -- 2015年5月}
-\role{实习}{经理: 高富帅}
-xxx后端开发
+\datedsubsection{\textbf{香港大学}~中国香港}{2015.09 -- 至今}
+\textit{在读博士生}\ 计算机科学
 \begin{itemize}
-  \item 实现了 xxx 特性
-  \item 后台资源占用率减少8\%
-  \item xxx
+  \item 研究课题：唇语识别，人脸素描，场景文字识别
+  \item 导师：Dr. Kenneth K.Y. Wong
+\end{itemize}
+\datedsubsection{\textbf{华中科技大学}~中国武汉}{2011.09 -- 2015.07}
+\textit{计算机工程学士}\ 计算机科学
+\begin{itemize}
+  \item 毕业课题：视觉关注区域中的内容分析与图像场景分类
+  \item 毕业导师：陈加忠教授
+  \item 加权平均分：92.3，前1\%(300)
 \end{itemize}
 
-\datedsubsection{\textbf{分布式科学上网姿势}}{2014年6月 -- 至今}
-\role{Golang, Linux}{个人项目，和富帅糕合作开发}
-\begin{onehalfspacing}
-分布式负载均衡科学上网姿势, https://github.com/cyfdecyf/cow
-\begin{itemize}
-  \item 修复了连接未正常关闭导致文件描述符耗尽的 bug
-  \item 使用Chord 哈希 URL, 实现稳定可靠地分流
-  \item xxx (尽量使用量化的客观结果)
-\end{itemize}
-\end{onehalfspacing}
+\section{\faHeart \ 研究兴趣}
+\textbf{计算机视觉}：包括唇语识别，场景文字识别，人脸素描生成，图像风格迁移
 
-\datedsubsection{\textbf{\LaTeX\ 简历模板}}{2015 年5月 -- 至今}
-\role{\LaTeX, Python}{个人项目}
-\begin{onehalfspacing}
-优雅的 \LaTeX\ 简历模板, https://github.com/billryan/resume
+\textbf{机器学习}：包括卷积神经网络，循环神经网络，对抗生成模型
+
+\section{\faUsers\ 研究经历}
+\datedsubsection{\textbf{香港大学}~中国香港}{2014.07 -- 2014.08}
+\role{暑期实习生}{计算机系}
 \begin{itemize}
-  \item 容易定制和扩展
-  \item 完善的 Unicode 字体支持，使用 \XeLaTeX\ 编译
-  \item 支持 FontAwesome 4.5.0
+  \item 研究项目：物体识别以及三维姿态估计
+  \item 导师：Dr. Kenneth K.Y. Wong
 \end{itemize}
-\end{onehalfspacing}
+
+\datedsubsection{\textbf{华中科技大学}~中国武汉}{2013.03 -- 2014.10}
+\role{大学生创新项目}{计算机系}
+\begin{itemize}
+  \item 研究课题：基于双目立体匹配的深度图生成
+  \item 导师：宋恩民教授
+\end{itemize}
 
 % Reference Test
 %\datedsubsection{\textbf{Paper Title\cite{zaharia2012resilient}}}{May. 2015}
@@ -64,26 +79,49 @@ xxx后端开发
 %\begin{itemize}
 %  \item main contribution
 %\end{itemize}
+\section{\faFileTextO\ 发表论文}
 
-\section{\faCogs\ IT 技能}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 编程语言: C == Python > C++ > Java
-  \item 平台: Linux
-  \item 开发: xxx
+\begin{bibsection}
+    \item W. Liu, \textbf{C. Chen}, K.-Y. K. Wong, Z. Su and J. Han. STAR-Net: A SpaTial Attention Residue Network for Scene Text Recognition. \emph{British Machine Vision Conference (BMVC)}, 2016.
+\end{bibsection}
+\vspace{.1in}
+
+\section{\faTrophy\ 获奖情况}
+\textbf{香港大学}~中国香港
+\begin{itemize}
+  \item 香港博士研究生奖学金 (HKPF) \hfill 2015 -- 2018
 \end{itemize}
 
-\section{\faHeartO\ 获奖情况}
-\datedline{\textit{第一名}, xxx 比赛}{2013 年6 月}
-\datedline{其他奖项}{2015}
-
-\section{\faInfo\ 其他}
-% increase linespacing [parsep=0.5ex]
-\begin{itemize}[parsep=0.5ex]
-  \item 技术博客: http://blog.yours.me
-  \item GitHub: https://github.com/username
-  \item 语言: 英语 - 熟练(TOEFL xxx)
+\vspace*{.1in}
+\textbf{华中科技大学}~中国武汉
+\begin{itemize}
+  \item[\textbullet] 国家励志奖学金 \hfill 2012 -- 2013 | 2013 -- 2014
+  \item[\textbullet] 启明学院特优生 \hfill 2012 -- 2013
+  \item[\textbullet] 校三好学生 \hfill 2011 -- 2012 | 2012 -- 2013
+  \item[\textbullet] 国家奖学金 \hfill 2011 -- 2012
 \end{itemize}
 
+
+\section{\faCogs\ 技能}
+% increase linespacing [parsep=0.5ex]
+\begin{itemize}[parsep=0.5ex]
+  \item 编程: \texttt{Python, C/C++, Java, Matlab}
+  \item 工具: PyTorch, Keras, Theano, LaTeX, OpenCV
+  \item 语言: 普通话，英语
+\end{itemize}
+
+\section{\faInfo\ 社会活动}
+\textbf{香港大学}~中国香港
+\begin{itemize}
+  \item 香港大学开放日学生助理 \hfill 2016.11 | 2017.11
+  \item 香港创新嘉年华学生助理 \hfill 2016.11
+\end{itemize}
+
+\vspace*{.1in}
+\textbf{华中科技大学}~中国武汉
+\begin{itemize}
+  \item 校医院志愿者 \hfill 2011 -- 2014
+  \item 网络中心兼职网管 \hfill 2012 -- 2013
+\end{itemize}
 %% Reference
 \end{document}
