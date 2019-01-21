@@ -18,7 +18,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%% Document Setup %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Don't like 10pt? Try 11pt or 12pt
-\documentclass[11pt]{article}
+\documentclass[10pt]{article}
 
 % The automated optical recognition software used to digitize resume
 % information works best with fonts that do not have serifs. This
@@ -30,6 +30,10 @@
 % This is a helpful package that puts math inside length specifications
 \usepackage{calc}
 \usepackage{comment}
+
+% set main font
+\usepackage[scaled=0.92]{helvet}
+\renewcommand{\familydefault}{\sfdefault}
 
 % Simpler bibsection for CV sections
 % (thanks to natbib for inspiration)
@@ -250,7 +254,7 @@ Pokfulam Road, Hong Kong          & \emph{Phone}: \texttt{+852 92077137}
 \end{tabular}
 
 \section{Research Interests}
-\textbf{Computer Vision}, including lip reading, scene text recognition, face sketch synthesis, neural style transfer
+\textbf{Computer Vision}, including face sketch synthesis, facial image editing, neural style transfer, scene text recognition, lip reading
 
 \textbf{Deep Learning}, including CNN, RNN, GAN
 
@@ -308,6 +312,9 @@ Pokfulam Road, Hong Kong          & \emph{Phone}: \texttt{+852 92077137}
 \section{Publications}
 [conference publications]
 \begin{bibsection}
+    \item \textbf{C. Chen}, Liu Wei, Xiao Tan, K.-Y. K. Wong. Semi-Supervised Learning for Face Sketch Synthesis in the Wild. (\emph{Submitted}).
+	\item \textbf{C. Chen}$^*$, Xiao Tan$^*$, K.-Y. K. Wong. Face Sketch Synthesis with Style Transfer using Pyramid Column Feature. \emph{Winter Conf. on Applications of Computer Vision(WAVC)}, 2018. ($^*$ equal contribution)
+    \item W. Liu, \textbf{C. Chen}, K.-Y. K. Wong. Char-Net: A Character-Aware Neural Network for Distorted Scene Text Recognition. \emph{AAAI Conference on Artificial Intelligence (AAAI)}, 2018. \textbf{Oral Presentation}
     \item W. Liu, \textbf{C. Chen}, K.-Y. K. Wong, Z. Su and J. Han. STAR-Net: A SpaTial Attention Residue Network for Scene Text Recognition. \emph{British Machine Vision Conference (BMVC)}, 2016.
 \end{bibsection}
 
